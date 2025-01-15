@@ -9,7 +9,7 @@ router.get("/", auth, async (req, res) => {
     const groups = await Group.findAll({
       include: [{ model: Permission }],
     });
-    console.log(groups);
+
     res.json(groups);
   } catch (err) {
     res.status(500).send("Server error");
