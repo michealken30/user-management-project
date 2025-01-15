@@ -186,4 +186,3 @@ PORT=5000
 
 ---
 
-This detailed README now includes all the necessary information, from setting up the environment to explaining the API routes and their functionality. Let me know if you need any more changes or additions!
