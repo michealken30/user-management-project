@@ -20,6 +20,9 @@ A full-stack application designed for user management, leveraging Role-Based Acc
 
 ## Database Design
 
+![Untitled Diagram drawio](https://github.com/user-attachments/assets/491a1277-7e73-4e85-a338-0ef57fefe64e)
+
+
 ### Entity Relationship Diagram
 
 ```
