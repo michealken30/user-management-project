@@ -91,20 +91,9 @@ Database Structure and Relationships:
 ## Prerequisites
 
 - **Node.js** (Ensure Node.js is installed on your machine)
-- **Docker** and **Docker Compose** (Optional for containerization)
 - **PostgreSQL** (Database for storing user information, roles, etc.)
 
-## Running with Docker
 
-To run the application using Docker and Docker Compose, follow these steps:
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/y/user-management-system.git
-   ```
-   2 Navigate to projct directory
-
-cd user-management-system
 
 ## API Endpoint
 
@@ -137,6 +126,11 @@ Authentication
     POST /api/auth/login
 
 ## Development Setup
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/michealken30/user-management-project.git
+   ```
 
 ### Environment Variables
 
