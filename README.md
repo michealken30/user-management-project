@@ -2,6 +2,9 @@
 
 A full-stack application designed for user management, leveraging Role-Based Access Control (RBAC) to ensure secure access and management of users, roles, permissions, and groups. This system uses JWT for authentication, bcrypt for password hashing, and Sequelize ORM for database management with PostgreSQL.
 
+![Screenshot (480)](https://github.com/user-attachments/assets/f26f90d0-8463-4aca-97e5-5fe3c2c85b71)
+
+
 ## Table of Contents
 
 - [Database Design](#database-design)
