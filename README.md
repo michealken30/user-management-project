@@ -74,7 +74,10 @@ Database Structure and Relationships:
 
     Relationships:
         One-to-One with User.
+
 ```
+
+![alt text](<db-design Diagram.drawio.png>)
 
 ## Features
 

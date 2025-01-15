@@ -26,9 +26,7 @@ router.get("/", auth, async (req, res) => {
 
 // Create user (admin and manager only)
 router.post("/", auth, async (req, res) => {
-  console.log(req.body);
   try {
-    console.log(req.user.id);
     const user = await User.findByPk(req.user.id, {
       include: [{ model: Role }],
     });

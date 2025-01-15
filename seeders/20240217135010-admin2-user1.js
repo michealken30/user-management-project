@@ -15,7 +15,6 @@ module.exports = {
         { name: "manager", description: "Can manage users and content" },
         { name: "user", description: "Basic access" },
       ]);
-      console.log("Roles created:", roles);
 
       // Create default permissions
       const permissions = await Permission.bulkCreate([
@@ -24,7 +23,6 @@ module.exports = {
         { name: "delete_user", description: "Can delete users" },
         { name: "view_user", description: "Can view users" },
       ]);
-      console.log("Permissions created:", permissions);
 
       // Create default groups
       const groups = await Group.bulkCreate([
@@ -32,7 +30,6 @@ module.exports = {
         { name: "HR", description: "Human Resources" },
         { name: "Finance", description: "Finance Department" },
       ]);
-      console.log("Groups created:", groups);
 
       // Delete existing admin user
       const existingAdminUser = await User.findOne({
@@ -43,13 +40,12 @@ module.exports = {
         console.log("Existing admin user deleted");
       }
 
-      // Create new admin user with a different password
       const salt = await bcrypt.genSalt(10);
-      const newHashedPassword = await bcrypt.hash("newAdminPassword123", salt); // New password for admin
+      const newHashedPassword = await bcrypt.hash("1234567", salt);
 
       const adminUser = await User.create({
-        username: "admin1",
-        email: "admin1@example.com",
+        username: "admin",
+        email: "admin1@gmail.com",
         password: newHashedPassword,
       });
       console.log("New Admin User Created:", adminUser);

@@ -9,7 +9,7 @@ router.get("/", auth, async (req, res) => {
     const roles = await Role.findAll({
       include: [{ model: Permission }],
     });
-    console.log(roles);
+
     res.json(roles);
   } catch (err) {
     res.status(500).send("Server error");

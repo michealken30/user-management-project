@@ -83,14 +83,8 @@ router.post(
         return res.status(400).json({ message: "Invalid credentials" });
       }
 
-      console.log(password);
-
       const isMatch = await bcrypt.compare(password, user.password);
-      console.log(isMatch);
-      console.log(user.email);
-      console.log(user.password);
-      console.log(user.username);
-      if (isMatch) {
+      if (!isMatch) {
         console.log("Password mismatch for email:", email);
         return res.status(400).json({ message: "Invalid credentials" });
       }
@@ -101,6 +95,7 @@ router.post(
 
       jwt.sign(
         payload,
+
         process.env.JWT_SECRET,
         { expiresIn: "1h" },
         (err, token) => {
