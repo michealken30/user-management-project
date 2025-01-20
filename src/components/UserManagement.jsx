@@ -4,8 +4,8 @@ import axios from "axios";
 function UserManagement() {
   const API_URL = "http://localhost:5000";
   const [users, setUsers] = useState([]);
-  const [roles, setRoles] = useState([]); // Initialize as an empty array
-  const [groups, setGroups] = useState([]); // Initialize groups state
+  const [roles, setRoles] = useState([]);
+  const [groups, setGroups] = useState([]);
 
   const [userForm, setUserForm] = useState({
     username: "",
