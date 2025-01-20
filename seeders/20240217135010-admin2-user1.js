@@ -1,5 +1,4 @@
 const { User, Role, Permission, Group } = require("../models");
-const bcrypt = require("bcryptjs");
 
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -40,13 +39,10 @@ module.exports = {
         console.log("Existing admin user deleted");
       }
 
-      const salt = await bcrypt.genSalt(10);
-      const newHashedPassword = await bcrypt.hash("1234567", salt);
-
       const adminUser = await User.create({
         username: "admin",
         email: "admin1@gmail.com",
-        password: newHashedPassword,
+        password: "12345678",
       });
       console.log("New Admin User Created:", adminUser);
 
