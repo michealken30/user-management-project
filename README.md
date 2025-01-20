@@ -2,6 +2,10 @@
 
 A full-stack application designed for user management, leveraging Role-Based Access Control (RBAC) to ensure secure access and management of users, roles, permissions, and groups. This system uses JWT for authentication, bcrypt for password hashing, and Sequelize ORM for database management with PostgreSQL.
 
+![Screenshot (480)](https://github.com/user-attachments/assets/8211e773-fd2d-4e3f-a5a0-564330f23904)
+
+
+
 ## Table of Contents
 
 - [Database Design](#database-design)
@@ -43,6 +47,7 @@ Database Structure and Relationships:
     Relationships:
         One-to-One with Profile (userId in Profile references id in User).
         Many-to-Many with Role (a user can have many roles, and a role can belong to many users). This would require a junction table UserRoles.
+        Many-to-Many with Groups (through UserGroups).
 
     Role:
         id (UUID, Primary Key)
@@ -51,6 +56,7 @@ Database Structure and Relationships:
 
     Relationships:
         Many-to-Many with User (through UserRoles).
+        Many-to-Many with Permission (through RolesPermission).
 
     Group:
         id (UUID, Primary Key)
@@ -58,7 +64,7 @@ Database Structure and Relationships:
         description (String)
 
     Relationships:
-        Many-to-Many with Permission (a group can have many permissions, and a permission can belong to many groups). This would require a junction table GroupPermissions.
+        Many-to-Many with Permission (a group can have many permissions, and a permission can belong to many groups throuh GroupPermisions also a group can belong to many user through UserGroups).
 
     Permission:
         id (UUID, Primary Key)
@@ -67,6 +73,7 @@ Database Structure and Relationships:
 
     Relationships:
         Many-to-Many with Group (through GroupPermissions).
+        Many-to-Many with Roles (through RolesPermissions)
 
     Profile:
         id (UUID, Primary Key)
